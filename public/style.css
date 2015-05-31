@@ -1,6 +1,6 @@
 body{
-  background-color: #000000;
-  background-image: url("http://p1.pichost.me/640/24/1475729.jpg");
+  background-color: white;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/24/96/59/2496595104fe80c762423d44fb5bea01.jpg");
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: 20%;
@@ -9,39 +9,39 @@ body{
   color: #CACACA;
   margin: 30px auto;
 }
-
+/*/*/*
 a{
   text-decoration: none;
 }
 
 h1, h2, h3, nav{
-    font-family: 'Londrina Sketch', cursive;
+    font-family: 'Indie Flower', cursive;
 }
 
-/* unvisited link */
+ unvisited link 
 a:link {
   color: #00FF00;
 }
 
-/* visited link */
+ visited link 
 a:visited {
   color: #00FF00;
 }
 
-/* mouse over link */
+ mouse over link 
 a:hover {
   color: #FF00FF;
 }
 
-/* selected link */
+ selected link 
 a:active {
   color: #0000FF;
 }
 
 header{
-/*  font-family: 'Londrina Sketch', cursive;*/
+  font-family: 'Indie Flower', cursive;
   font-size: 50px;
-  background-color: black;
+  background-color: white;
   width: 500px;
   margin: 30px;
   border-radius: 10px;
@@ -50,7 +50,7 @@ header{
 h1{
   width: 500px;
   text-align: center;
-  background-color: black;
+  background-color: white;
   margin: 0 auto;
   border-radius: 10px;
 }
@@ -62,7 +62,7 @@ h1{
 }
 
 nav{
-  background-color: black;
+  background-color: white;
   padding-top: 1px;
   padding-bottom: 1px;
   border: 1px solid #555555;
@@ -77,12 +77,12 @@ nav ul{
   text-align: center;
 }
 
-/*nav ul a{
+nav ul a{
   vertical-align: middle;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-}*/
+}
 
 nav ul li{
   display: inline-block;
@@ -111,28 +111,28 @@ nav ul li{
   min-width: 70px;
 }
 
-/* unvisited link */
+ unvisited link 
 #content a:link {
   color: #CACACA;
 }
 
-/* visited link */
+ visited link 
 #content a:visited {
   color: #CACACA;
 }
 
-/* mouse over link */
+ mouse over link 
 #content a:hover {
   color: #FF00FF;
 }
 
-/* selected link */
+ selected link 
 #content a:active {
   color: #0000FF;
 }
 
 #content{
-  background-color: black;
+  background-color: white;
   padding: 25px;
   color: #CACACA;
   border: 1px solid #555555;
@@ -141,7 +141,7 @@ nav ul li{
 
 #title h2{
   font-size: 45px;
-  background-color: black;
+  background-color: white;
   margin: 0px 0px 25px 0px;
 }
 
@@ -189,7 +189,7 @@ h3{
 }
 
 .button{
-  /*padding: 0px;*/
+  padding: 0px;
 }
 
 thead{

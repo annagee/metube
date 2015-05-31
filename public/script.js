@@ -1,5 +1,19 @@
 
 
+
+function appendNewVideo(data){
+   $('<li class="'+ (data.done == 't' ? "completed" : "") + '">' + '<input class="toggle" type="checkbox" data-id="' + data.id +'" '+ (data.done == 't' ? 'checked="checked"' : "") + '>'+'<label>'+ data.item +'</label>'+'<button class="destroy" data-id="'+data.id +'"></button>'+
+    '</li>').prependTo("#todo-list")
+
+
+}
+
+
+
+
+
+
+
 function getVideo(){
  $.ajax({
        type: 'GET',
@@ -11,6 +25,19 @@ function getVideo(){
   })
  })
 
+}
+
+function showVideoGenre(){
+  var videoGenre = $(this).data("id")
+  $.ajax({
+    type:'GET',
+    url:'/videos' + videoGenre,
+    dataType: 'json',
+    data: {item: videoGenre}
+  }).done(function(data){
+    appendNewItem(data);
+    $('#video-genre').val('')
+  })
 }
 
 function createVideo(){
@@ -30,7 +57,7 @@ function deleteVideo () {
   deleteButton = $(this);
   var videoId = $(this).data("id")
   $.ajax({
-    type: "DELETE"
+    type: "DELETE",
     url: "/videos/" + videoId,
     dataType: 'json'
 
@@ -53,7 +80,8 @@ $(document).ready(function(){
       playItem()
     }
   })
-
+  $('#static').on('click', showVideoGenre);
+ $('#todo-list').on('click', '.destroy', deleteItem);
 
 });
 
