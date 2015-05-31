@@ -38,7 +38,7 @@ post "/videos"  do
     if request .xhr?
        json@videos
     else
-       redirect to ("/videos")
+       redirect_to "/videos"
     end  
 end         
 
@@ -48,7 +48,6 @@ get "/videos/:id" do
   @video = run_sql(sql).first
   erb :show
 end
-
 # editing a video
 get "/videos/:id/edit" do
   sql = "SELECT * FROM videos WHERE id=#{params[:id]}"
@@ -67,7 +66,7 @@ post "/videos/:id" do
 
   sql = "UPDATE videos SET artist=#{sql_string(artist)}, title=#{sql_string(title)}, description=#{sql_string(description)}, url='#{url}', category='#{category}', genre='#{genre}' WHERE id='#{params[:id]}';"
   run_sql(sql)
-  redirect to("/videos")
+  redirect_to "/videos"
 end
 
 # deleting a video
@@ -78,7 +77,7 @@ delete "/videos/:id" do
  if request.xhr?
     json[{status: :ok}]
  else
-    redirect to ("/videos") 
+    redirect_to "/videos" 
 
  end
 
@@ -89,6 +88,16 @@ end
  # using the nav bar
 
 
+get "/videos/:genre" do
+
+  sql = "select  distinct #{params[:genre]} from videos"
+  run_sql(sql) 
+  if request.xhr? 
+     json[{status: :ok}]
+  else
+      redirect_to "/videos"
+  end        
+end  
 
 
 
