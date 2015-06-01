@@ -8,20 +8,14 @@ function appendNewVideo(data){
 
 }
 
-
-
-
-
-
-
 function getVideo(){
  $.ajax({
        type: 'GET',
        url:'/videos',
        datatype: 'json'
  }).done(function(data){
-  $.each(data, function(index, item){
-    appendNewItem(item);
+  $.each(data, function(index, video){
+    appendNewVideo(video);
   })
  })
 
@@ -80,8 +74,7 @@ $(document).ready(function(){
       playItem()
     }
   })
-  $('#static').on('click', showVideoGenre);
- $('#todo-list').on('click', '.destroy', deleteItem);
+  $('#video-genre').on('click', showVideoGenre);
 
 });
 
